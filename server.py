@@ -10,11 +10,16 @@ def index():
 @app.route("/process", methods=['POST'])
 def process():
 
+
+    print("in if")
+    if "url" in request.form:
+        print("--------------------------------------------------")
+        print(request.form['url'])
         url = request.form['url']
-        
+
         req = requests.get(url)
 
         return jsonify({"return": req.text})
-
+    
 
 app.run(debug=True)

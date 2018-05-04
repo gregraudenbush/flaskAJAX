@@ -6,28 +6,124 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <script src = "{{ url_for('static', filename = 'js/script.js') }}" ></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+    <style>
+            .loader {
+                color: #8f49ff;
+                font-size: 20px;
+                margin: 100px auto;
+                width: 1em;
+                height: 1em;
+                border-radius: 50%;
+                position: relative;
+                text-indent: -9999em;
+                -webkit-animation: load4 1.3s infinite linear;
+                animation: load4 1.3s infinite linear;
+                -webkit-transform: translateZ(0);
+                -ms-transform: translateZ(0);
+                transform: translateZ(0);
+                }
+                @-webkit-keyframes load4 {
+                0%,
+                100% {
+                    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+                }
+                12.5% {
+                    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+                }
+                25% {
+                    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+                }
+                37.5% {
+                    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+                }
+                50% {
+                    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+                }
+                62.5% {
+                    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+                }
+                75% {
+                    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+                }
+                87.5% {
+                    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+                }
+                }
+                @keyframes load4 {
+                0%,
+                100% {
+                    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+                }
+                12.5% {
+                    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+                }
+                25% {
+                    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+                }
+                37.5% {
+                    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+                }
+                50% {
+                    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+                }
+                62.5% {
+                    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+                }
+                75% {
+                    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+                }
+                87.5% {
+                    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+                }
+}
+            </style>
+
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>   -->
 </head> 
 </head>
 <body>
-    <h1>Flask AJAX Assignment</h1>
     
     
-    
-
-        <form>
-            
-            <input type="text" name="url" id="url" placeholder="http://www....">
-            <button style="background-color:blue; color: rgb(249, 249, 249); border-radius: 5px;">Fetch</button>
-    
+    <div class="container">
+        <h1>Flask AJAX Assignment</h1>
+        <form id="form1" >
+            <input type="text" name="url" id="url" data-place="return1" placeholder="http://www...." size="52">
+            <input type="submit" value="Fetch" style="background-color: cornflowerblue; border-radius: 3px;">
         </form>
 
+        <form id="form2">
+            <input type="text" name="url" id="url2" data-place="return2" placeholder="http://www...." size="52">
+            <input type="submit" value="Fetch" style="background-color: cornflowerblue;  border-radius: 3px;">
+        </form>
 
-    <div id="form1">
-
-
-
+        <form id="form3">
+            <input type="text" name="url" id="url3" data-place="return3" placeholder="http://www...." size="52">
+            <input type="submit" value="Fetch" style="background-color: cornflowerblue;  border-radius: 3px;">
+        </form>
     </div>
+    <br>
+    <div class="container">
+
+        <div id="return1" class="divreturn">
+                <div class="loader" id="loader" ></div>
+        </div>
+
+        <div id="return2" class="divreturn">
+                <div class="loader" id="loader2" ></div>
+        </div>
+
+        <div id="return3" class="divreturn">
+                <div class="loader" id="loader3" ></div>
+        </div>
+    </div>
+
+    
     
 </body>
 </html>
